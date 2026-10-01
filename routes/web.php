@@ -11,13 +11,13 @@ Route::get('/', function () {
 // Agent Portal routes
 Route::prefix('agent')->name('agent.')->group(function () {
     Route::get('/dashboard', [AgentController::class, 'dashboard'])->name('dashboard');
+    Route::get('/leads', [AgentController::class, 'leads'])->name('leads');
+    Route::get('/properties', [AgentController::class, 'properties'])->name('properties');
+    Route::get('/earnings', [AgentController::class, 'earnings'])->name('earnings');
     
-    // Non-dashboard sections redirect with coming soon parameter
-    Route::get('/leads', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Leads Management']))->name('leads');
-    Route::get('/properties', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Property Portfolio']))->name('properties');
+    // Remaining sections redirect with coming soon parameter
     Route::get('/bargain', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Smart Bargain & Deals']))->name('bargain');
     Route::get('/visits', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Site Visits']))->name('visits');
-    Route::get('/earnings', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Earnings & Commission']))->name('earnings');
     Route::get('/analytics', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Analytics']))->name('analytics');
     Route::get('/notifications', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Notifications']))->name('notifications');
     Route::get('/settings', fn() => redirect()->route('agent.dashboard', ['coming_soon' => 'Settings']))->name('settings');

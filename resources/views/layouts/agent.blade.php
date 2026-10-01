@@ -11,6 +11,9 @@
 </head>
 <body>
     <div class="app-shell">
+        <!-- Sidebar Backdrop Overlay for Mobile/Tablet -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
         <!-- Sidebar Navigation -->
         <aside class="sidebar" id="agent-sidebar">
             <div class="sidebar-header">
@@ -24,7 +27,7 @@
                     </div>
                 </div>
                 <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation">
-                    {!! \App\Support\Icon::render('chevron-right', 'icon', 18) !!}
+                    {!! \App\Support\Icon::render('x', 'icon', 18) !!}
                 </button>
             </div>
 
@@ -87,6 +90,9 @@
             <!-- Topbar -->
             <header class="topbar">
                 <div class="topbar-left">
+                    <button class="mobile-hamburger-btn" id="mobile-hamburger-btn" aria-label="Toggle Menu">
+                        {!! \App\Support\Icon::render('menu', 'icon', 20) !!}
+                    </button>
                     <div class="topbar-search">
                         <span class="search-icon">
                             {!! \App\Support\Icon::render('search', 'icon', 16) !!}
